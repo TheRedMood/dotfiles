@@ -108,6 +108,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export LANG=no_NB.UTF-8
+export LANG=no_NB
 PATH=$PATH:$HOME/bin
 export PATH
