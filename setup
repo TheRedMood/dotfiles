@@ -1,2 +1,8 @@
 #!/bin/sh
 ln -s ~/.dotfiles/bashrc ~/.bashrc
+ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -s ~/.dotfiles/vim/jslintrc ~/.jslintrc
+
+# Setting up git submodules
+git submodule init
+git submodule update
