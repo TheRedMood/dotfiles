@@ -35,3 +35,6 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 " Backup files, is puted in a sorted directory to not cluter it up.
 set backupdir=~/.dotfiles/vim/tmpfiles,.
 set directory=~/.dotfiles/vim/tmpfiles,.
+
+" Setting up Tags list settings
+nnoremap <silent> <F8> :TlistToggle<CR>
