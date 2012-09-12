@@ -1,0 +1,41 @@
+#!/usr/bin/python2.7
+
+import os
+
+# Global variables
+HOME = os.path.expanduser('~')
+DOTDIR = os.path.expanduser('~/.dotfiles')
+
+# Functions
+def warn(file):
+    answer = raw_input("Copying %s, do you comply[Y,N]: " % file)
+    if answer.lower() == 'y':
+        return True
+    else:
+        return False 
+# All the tests
+iscopy  = os.getcwd() == DOTDIR
+isthere = os.path.isdir(DOTDIR)
+isvim   = os.path.isfile("%s/.vimrc"  % HOME)
+iszsh   = os.path.isfile("%s/.zshrc"    % HOME)
+isbash  = os.path.isfile("%s/.bashrc" % HOME)
+iscanto = os.path.isdir("%s/.canto"   % HOME)
+
+tests = {'vimrc': isvim, 'bashrc': isbash, 'canto': iscanto,
+         'zshrc': iszsh}
+
+if not iscopy:
+    if isthere : print "You already have a .dotfiles dictonary."
+    else       : print "Copy this to ~/.dotfiles"
+    exit()
+
+for k, v in tests.iteritems():
+    print k, v
+
+if not isvim:
+    if warn(".vimrc"): os.system("ln -s %s/vimrc %s/.vimrc" % (DOTDIR, HOME))
+
+if not iszsh:
+    raw_input("Copying files, press CTRL-C to abort the program")
+    os.system("ln -s %s/vimrc %s/.vimrc" % (DOTDIR, HOME))
+print warn("test")
