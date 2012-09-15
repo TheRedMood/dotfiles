@@ -1,5 +1,5 @@
-own_window yes
-own_window_type override
+own_window no
+own_window_type desktop
 own_window_colour 000000
 own_window_transparent no
 own_window_hints undecorated below sticky skip_taskbar skip_pager
@@ -14,7 +14,7 @@ maximum_width 1280
 border_margin 4
 border_width 1
 draw_outline no
-default_color white
+default_color orange
 alignment bottom_left
 use_spacer right
 no_buffers yes
