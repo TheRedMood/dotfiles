@@ -2,6 +2,9 @@
 *~
 *.swp
 
+# ncmpcpp files
+*.log
+
 # Canto files
 canto/feeds/*
 canto/fetchlog

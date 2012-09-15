@@ -13,6 +13,7 @@ def warn(file):
         return True
     else:
         return False 
+
 # All the tests
 iscopy  = os.getcwd() == DOTDIR
 isthere = os.path.isdir(DOTDIR)
@@ -32,10 +33,22 @@ if not iscopy:
 for k, v in tests.iteritems():
     print k, v
 
-if not isvim:
-    if warn(".vimrc"): os.system("ln -s %s/vimrc %s/.vimrc" % (DOTDIR, HOME))
-
-if not iszsh:
-    raw_input("Copying files, press CTRL-C to abort the program")
+print "Linking .vimrc...",
+if not isvim and warn(".vimrc"):
     os.system("ln -s %s/vimrc %s/.vimrc" % (DOTDIR, HOME))
-print warn("test")
+else:
+    print "Skipping"
+
+print "Linking .zshrc...",
+if not iszsh and warn(".zshrc"):
+    os.system("ln -s %s/zshrc %s/.zshrc" % (DOTDIR, HOME))
+    print "Ok."
+else:
+    print "Skipping."
+
+peinr "Linking .canto...",
+if not iscanto and warn(".cantorc"):
+    os.system("ln -s ~/.dotfiles/canto/ ~/.canto
+    print "ln -s 
+else:
+    print "Skipping"

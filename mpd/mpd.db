@@ -1,0 +1,29 @@
+info_begin
+format: 1
+mpd_version: 0.17.1
+fs_charset: UTF-8
+tag: Artist
+tag: ArtistSort
+tag: Album
+tag: AlbumArtist
+tag: AlbumArtistSort
+tag: Title
+tag: Track
+tag: Name
+tag: Genre
+tag: Date
+tag: Composer
+tag: Performer
+tag: Disc
+tag: MUSICBRAINZ_ARTISTID
+tag: MUSICBRAINZ_ALBUMID
+tag: MUSICBRAINZ_ALBUMARTISTID
+tag: MUSICBRAINZ_TRACKID
+info_end
+song_begin: B-Complex - Blissful Ignorance [Full - HD].mp3
+Time: 337
+Artist: B-Complex
+Title: Blissful Ignorance
+Genre: dnb
+mtime: 1347703806
+song_end
