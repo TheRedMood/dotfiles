@@ -17,6 +17,8 @@ set expandtab
 " Autoindent
 set autoindent
 
+" Line numbers
+set nu
 " Looks
 set background=dark " you can use `dark` or `light` as your background
 syntax on
