@@ -40,7 +40,6 @@ iscanto   = os.path.isdir("%s/.canto"   % HOME)
 ismpd     = os.path.isdir("%s/.mpd"     % HOME)
 isncmpcpp = os.path.isdir("%s/.ncmpcpp" % HOME)
 isechinus = os.path.isdir("%s/.echinus" % HOME)
-ismusic   = os.path.isdir("%s/music" % HOME)
 
 # Having all the values in a dict makes it easier to test.
 tests = {'vimrc': isvim, 'bashrc': isbash, 'canto': iscanto,
@@ -105,13 +104,6 @@ else:
 print "Linking .ncmpcpp...",
 if not isncmpcpp and warn():
     os.system("ln -s %s/ncmpcpp %s/.ncmpcpp" % (DOTDIR, HOME))
-else: 
-    print "Skipping."
-
-# MUSIC
-print "Linking music...",
-if not ismusic and warn():
-    os.system("ln -s %s/music %s/music" % (DOTDIR, HOME))
 else: 
     print "Skipping."
 
