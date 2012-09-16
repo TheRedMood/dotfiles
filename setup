@@ -31,7 +31,7 @@ isvim   = os.path.isfile("%s/.vimrc"  % HOME)
 iszsh   = os.path.isfile("%s/.zshrc"  % HOME)
 isbash  = os.path.isfile("%s/.bashrc" % HOME)
 isourico = os.path.isfile("%s/.ouricorc" % HOME)
-isXdefaults = os.path.isfile("%s/.Xdefaults" % HOME)
+isXresources = os.path.isfile("%s/.Xresources" % HOME)
 isconky = os.path.isfile("%s/.conkyrc" % HOME)
 isxinit = os.path.isfile("%s/.xinitrc" % HOME)
 
@@ -40,10 +40,11 @@ iscanto   = os.path.isdir("%s/.canto"   % HOME)
 ismpd     = os.path.isdir("%s/.mpd"     % HOME)
 isncmpcpp = os.path.isdir("%s/.ncmpcpp" % HOME)
 isechinus = os.path.isdir("%s/.echinus" % HOME)
+isscripts = os.path.isdir("%s/scripts"  % HOME)
 
 # Having all the values in a dict makes it easier to test.
 tests = {'vimrc': isvim, 'bashrc': isbash, 'canto': iscanto,
-        'zshrc': iszsh, 'ourico': isourico, 'Xdefaults': isXdefaults,
+        'zshrc': iszsh, 'ourico': isourico, 'Xresources': isXresources,
         'mpd': ismpd, 'ncmpcpp': isncmpcpp}
 
 # We would not want to copy over the .dotfiles directory
@@ -79,10 +80,10 @@ if not iscanto and warn():
 else:
     print "Skipping."
 
-# XDEFAULTS
-print "Linking .Xdefaults...",
-if not isXdefaults and warn():
-    os.system("ln -s %s/Xdefaults %s/.Xdefaults" % (DOTDIR, HOME))
+# XRESOURCES
+print "Linking .Xresources...",
+if not isXresources and warn():
+    os.system("ln -s %s/Xresources %s/.Xresources" % (DOTDIR, HOME))
 else:
     print "Skipping."
 
@@ -125,6 +126,13 @@ else:
 print "Linking .xinitrc...",
 if not isxinit and warn():
     os.system("ln -s %s/xinitrc %s/.xinitrc" % (DOTDIR, HOME))
+else: 
+    print "Skipping."
+
+# XINIT
+print "Linking scripts...",
+if not isscripts and warn():
+    os.system("ln -s %s/scripts %s/scripts" % (DOTDIR, HOME))
 else: 
     print "Skipping."
 

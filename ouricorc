@@ -10,7 +10,7 @@ Ourico*deskname.fg: #d3d7cf
 Ourico*deskname.border: #555753
 
 !Ourico*font: snap
-Ourico*font:Terminus:pixelsize=9
+Ourico*font:Fixed:pixelsize=12
 Ourico*height: 16
 Ourico*width: 0
 Ourico*borderpx: 0
@@ -19,3 +19,7 @@ Ourico*showdesktop: 1
 Ourico*showtagbar: 1
 Ourico*focusonly: 0
 Ourico*bottom: 0
+Ourico*button: 1
+Ourico*raise: 1
+Ourico*tblines: 0
+Ourico*showclock: 0
