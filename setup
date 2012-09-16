@@ -41,6 +41,7 @@ ismpd     = os.path.isdir("%s/.mpd"     % HOME)
 isncmpcpp = os.path.isdir("%s/.ncmpcpp" % HOME)
 isechinus = os.path.isdir("%s/.echinus" % HOME)
 isscripts = os.path.isdir("%s/scripts"  % HOME)
+isvimdir  = os.path.isdir("%s/.vim"     % HOME)
 
 # Having all the values in a dict makes it easier to test.
 tests = {'vimrc': isvim, 'bashrc': isbash, 'canto': iscanto,
@@ -135,6 +136,14 @@ if not isscripts and warn():
     os.system("ln -s %s/scripts %s/scripts" % (DOTDIR, HOME))
 else: 
     print "Skipping."
+
+# VIM DIR
+print "Linking .vim...",
+if not isvimdir and warn():
+    os.system("ln -s %s/vim %s/.vim" % (DOTDIR, HOME))
+else: 
+    print "Skipping."
+
 
 #------------------START OF POST LINKING ACTIONS-----------------#
 
