@@ -42,6 +42,8 @@ isncmpcpp = os.path.isdir("%s/.ncmpcpp" % HOME)
 isechinus = os.path.isdir("%s/.echinus" % HOME)
 isscripts = os.path.isdir("%s/scripts"  % HOME)
 isvimdir  = os.path.isdir("%s/.vim"     % HOME)
+ismusic   = os.path.isdir("%s/music"    % HOME)
+isimages   = os.path.isdir("%s/images"   % HOME)
 
 # Having all the values in a dict makes it easier to test.
 tests = {'vimrc': isvim, 'bashrc': isbash, 'canto': iscanto,
@@ -146,9 +148,7 @@ if not isvimdir and warn():
 else: 
     print "Skipping."
 
-
-#------------------START OF POST LINKING ACTIONS-----------------#
-
+#------------------NON LINKING OPERATIONS---------------------#
 # I need to initalize the modules
 print "Starting git submodule init:"
 os.system("git submodule init")
@@ -158,3 +158,19 @@ print "Starting git submodule update:"
 os.system("git submodule update")
 
 
+#-----------------THEREDMOOD SPECIFIC-----------------------------#
+done = raw_input("Are you TheRedMood? (Y/N): ")
+if done.lower() != "y":
+    sys.exit()
+# MUSIC
+print "Creating music/...",
+if not ismusic and warn():
+    os.system("mkdir %s/music" % (HOME))
+else: 
+    print "Skipping."
+
+print "Creating images/...",
+if not isimages and warn():
+    os.system("mkdir %s/images" % (HOME))
+else: 
+    print "Skipping."

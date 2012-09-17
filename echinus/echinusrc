@@ -1,11 +1,11 @@
 !Echinus*selected.border: #262626
-Echinus*selected.border: #C0FF3E
+Echinus*selected.border: #FCA311
 Echinus*selected.button: #d3d7cf
 Echinus*selected.bg: #262626
 Echinus*selected.fg: #d3d7cf
 
 !Echinus*normal.border: #262626
-Echinus*normal.border: #B3EE3A
+Echinus*normal.border: #FCE016
 Echinus*normal.button: #262626
 Echinus*normal.bg: #262626
 Echinus*normal.fg: #b0b4ac
