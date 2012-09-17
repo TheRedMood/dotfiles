@@ -7,13 +7,14 @@ over time.
 To fully harness the power of these config files you need:
 
 Echinus - WM
-Canto - RSS reader
-conky - realtime system info dsiplayer
-mpd - music player deamon
+Canto   - RSS reader
+conky   - realtime system info dsiplayer
+mpd     - music player deamon
 ncmpcpp - front end for mpd
-ourico - panel for Echinus
-vim - The best editor :)
-rxvt-unicode - My favorite terminal
-zsh - A shell
+ourico  - panel for Echinus
+vim     - The best editor :)
+urxvt   - My favorite terminali
+zsh     - A shell
+dmenu   - A programs launcher
 
 The setup file relays on python.

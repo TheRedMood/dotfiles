@@ -51,9 +51,11 @@ tests = {'vimrc': isvim, 'bashrc': isbash, 'canto': iscanto,
 # We would not want to copy over the .dotfiles directory
 if not iscopy:
     # Giving out error messages.
-    if isthere : print "You already have a .dotfiles dictonary."
-    else       : print "Copy this to %s" % DOTDIR
-    exit()
+    if isthere : 
+        print "You already have a .dotfiles dictonary."
+    else: 
+        print "Copy this to %s" % DOTDIR
+    sys.exit()
 
 # Disabled due to testing purposes
 #for k, v in tests.iteritems():
