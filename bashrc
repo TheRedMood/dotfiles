@@ -106,7 +106,7 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
+# Needed to do this
 #export LANG=no_NB
 PATH=$PATH:$HOME/bin
 export PATH
