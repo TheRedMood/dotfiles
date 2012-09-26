@@ -1,0 +1,2 @@
+#!/bin/bash
+iconv -f 437 -t UTF8 $1

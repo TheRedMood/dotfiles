@@ -6,7 +6,7 @@ filetype plugin on
 "Powerline stuff
 set nocompatible
 set laststatus=2
-set encoding=latin1
+set encoding=utf-8
 let g:Powerline_symbols = 'compatible'
 
 " Tabs
@@ -16,6 +16,9 @@ set expandtab
 
 " Autoindent
 set autoindent
+
+" Line numbers
+set nu
 
 " Looks
 set background=dark " you can use `dark` or `light` as your background

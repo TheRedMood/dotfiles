@@ -1,1 +1,11 @@
+# Vim temp files
 *~
+*.swp
+
+# ncmpcpp files
+*.log
+
+# Canto files
+canto/feeds/*
+canto/fetchlog
+canto/log

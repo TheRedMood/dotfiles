@@ -13,3 +13,6 @@
 [submodule "vim/bundle/mango.vim"]
 	path = vim/bundle/mango.vim
 	url = https://github.com/goatslacker/mango.vim
+[submodule "vim/bundle/vim-powerline.vim"]
+	path = vim/bundle/vim-powerline.vim
+	url = https://github.com/Lokaltog/vim-powerline.git

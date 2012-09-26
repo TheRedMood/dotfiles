@@ -1,0 +1,142 @@
+info_begin
+format: 1
+mpd_version: 0.17.1
+fs_charset: UTF-8
+tag: Artist
+tag: ArtistSort
+tag: Album
+tag: AlbumArtist
+tag: AlbumArtistSort
+tag: Title
+tag: Track
+tag: Name
+tag: Genre
+tag: Date
+tag: Composer
+tag: Performer
+tag: Disc
+tag: MUSICBRAINZ_ARTISTID
+tag: MUSICBRAINZ_ALBUMID
+tag: MUSICBRAINZ_ALBUMARTISTID
+tag: MUSICBRAINZ_TRACKID
+info_end
+directory: Gramatik
+mtime: 1347824623
+begin: Gramatik
+directory: Gramatik_digitalfreedom
+mtime: 1347824645
+begin: Gramatik/Gramatik_digitalfreedom
+song_begin: 01 Fist Up.mp3
+Time: 275
+Artist: Gramatik
+Title: Fist Up
+Album: #digitalfreedom
+Track: 1/6
+Date: 2012
+Genre: Glitch-Hop
+Disc: 1/1
+mtime: 1347824631
+song_end
+song_begin: 02 23 Flavors.mp3
+Time: 325
+Artist: Gramatik
+Title: 23 Flavors
+Album: #digitalfreedom
+Track: 2/6
+Date: 2012
+Genre: Dubstep
+Disc: 1/1
+mtime: 1347824651
+song_end
+song_begin: 03 Illusion Of Choice.mp3
+Time: 298
+Artist: Gramatik
+Title: Illusion Of Choice
+Album: #digitalfreedom
+Track: 3/6
+Date: 2012
+Genre: Dubstep
+Disc: 1/1
+mtime: 1347824627
+song_end
+song_begin: 04 Born Ready.mp3
+Time: 326
+Artist: Gramatik
+Title: Born Ready
+Album: #digitalfreedom
+Track: 4/6
+Date: 2012
+Genre: Nu Disco
+Disc: 1/1
+mtime: 1347824645
+song_end
+song_begin: 05 Solidified.mp3
+Time: 343
+Artist: Gramatik
+Title: Solidified
+Album: #digitalfreedom
+Track: 5/6
+Date: 2012
+Genre: Dubstep
+Disc: 1/1
+mtime: 1347824641
+song_end
+song_begin: 06 Talkbox Intended.mp3
+Time: 370
+Artist: Gramatik
+Title: Talkbox Intended
+Album: #digitalfreedom
+Track: 6/6
+Date: 2012
+Genre: Glitch-Hop
+Disc: 1/1
+mtime: 1347824636
+song_end
+end: Gramatik/Gramatik_digitalfreedom
+end: Gramatik
+directory: calm
+mtime: 1347824662
+begin: calm
+song_begin: Nouvelle Vague - Dance With Me.mp3
+Time: 211
+Artist: Nouvelle Vague
+Title: Dance With Me
+mtime: 1347824663
+song_end
+song_begin: tennishero_-_high_scenes_kodak_durantin_remix.mp3
+Time: 207
+Artist: Tennishero
+Title: High Scenes (Kodak Duration Remix)
+Genre: techno
+mtime: 1347824661
+song_end
+end: calm
+directory: dnb
+mtime: 1347824658
+begin: dnb
+song_begin: B-Complex - Blissful Ignorance [Full - HD].mp3
+Time: 337
+Artist: B-Complex
+Title: Blissful Ignorance
+Genre: dnb
+mtime: 1347839280
+song_end
+end: dnb
+directory: techno
+mtime: 1347824657
+begin: techno
+song_begin: Satellite Stories - Sirens (slow magic remix).mp3
+Time: 225
+Artist: Satellite Stories
+Title: Sirens (Slow Magic Remix)
+Genre: techno
+mtime: 1347824658
+song_end
+song_begin: The Future Is Now.mp3
+Time: 370
+Artist: GRiZ
+Title: The Future Is Now
+Genre: Future Funk / GrooveStep
+mtime: 1347824657
+song_end
+end: techno

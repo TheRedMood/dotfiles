@@ -1,0 +1,4 @@
+#!/bin/sh
+#sshfs disk@zerotohero.no-ip.org:/heaven/remote /home/teodor/remoteHD/homeHD
+sshfs disk@zerotohero.no-ip.org:/heaven/remote/music  ~/music
+sshfs disk@zerotohero.no-ip.org:/heaven/remote/images ~/images
