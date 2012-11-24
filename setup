@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# This is the setupfile for the configuration files of TheRedMood.
+# It is written to be easy to work on and improve.
+
+# Please note that this is my first bash script. Noobness may occour.
+# You have been warned....
+
+# Setting up variables
+DOTDIR = $HOME/.dotfiles
