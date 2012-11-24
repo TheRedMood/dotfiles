@@ -21,7 +21,7 @@ set autoindent
 set nu
 
 " Looks
-set background=dark " you can use `dark` or `light` as your background
+"set background=light " you can use `dark` or `light` as your background
 syntax on
 color mango
 

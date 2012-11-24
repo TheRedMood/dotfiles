@@ -2,6 +2,8 @@
 *~
 *.swp
 
+# Emacs
+#*#
 # ncmpcpp files
 *.log
 

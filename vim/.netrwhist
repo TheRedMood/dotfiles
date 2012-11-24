@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/heaven/teodor/projects/zsluch/zsluch'
 let g:netrw_dirhist_2='/home/teodor/.canto'
 let g:netrw_dirhist_3='/home/teodor/.ncmpcpp'
 let g:netrw_dirhist_4='/home/teodor/.dotfiles/ncmpcpp'
 let g:netrw_dirhist_5='/home/teodor/.echinus'
+let g:netrw_dirhist_6='/home/teodor/.dotfiles/vim/bundle/jslint.vim'
