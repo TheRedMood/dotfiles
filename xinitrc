@@ -1,4 +1,5 @@
-exec ck-launch-session dbus-launch wmfs &
+#exec ck-launch-session dbus-launch wmfs &
+exec wmfs &
 wmpid=$! # Here, we save the PID of wmfs
 
 # Here we do all other jizz jazz

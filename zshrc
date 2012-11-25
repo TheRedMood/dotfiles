@@ -16,5 +16,5 @@ prompt walters
 export PROMPT="[%{$fg[yellow]%}%B%n%b%{$reset_color%}]::[%{$fg[yellow]%}%B%~%b%{$reset_color%}] "
 
 # PATH SETTINGS
-PATH=$PATH:
+PATH=$PATH:$HOME/scripts
 export PATH

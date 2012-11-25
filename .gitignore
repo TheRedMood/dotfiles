@@ -2,8 +2,6 @@
 *~
 *.swp
 
-# Emacs
-#*#
 # ncmpcpp files
 *.log
 
@@ -11,3 +9,10 @@
 canto/feeds/*
 canto/fetchlog
 canto/log
+
+# MPD
+mpd/mpd.db
+mpd/mpd.log
+mpd/mpd.pid
+mpd/playlists/*
+mpd/mpdstates
