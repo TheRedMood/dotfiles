@@ -16,7 +16,7 @@ DOTDIR = os.path.expanduser('~/.dotfiles')
 
 # Functions
 def warn():
-    answer = raw_input("(Y/N): ")
+    answer = input("(Y/N): ")
     if answer.lower() == 'y':
         return True
     else:
@@ -27,36 +27,31 @@ iscopy  = os.getcwd() == DOTDIR
 isthere = os.path.isdir(DOTDIR)
 
 # We need to test the files to not overwrite anything!
-isvim   = os.path.isfile("%s/.vimrc"  % HOME)
-iszsh   = os.path.isfile("%s/.zshrc"  % HOME)
-isbash  = os.path.isfile("%s/.bashrc" % HOME)
-isourico = os.path.isfile("%s/.ouricorc" % HOME)
-isXresources = os.path.isfile("%s/.Xresources" % HOME)
-isconky = os.path.isfile("%s/.conkyrc" % HOME)
-isxinit = os.path.isfile("%s/.xinitrc" % HOME)
-
+isvim        = os.path.isfile("%s/.vimrc"          % HOME)
+iszsh        = os.path.isfile("%s/.zshrc"          % HOME)
+isbash       = os.path.isfile("%s/.bashrc"         % HOME)
+isXresources = os.path.isfile("%s/.Xresources"     % HOME)
+isconky      = os.path.isfile("%s/.conkyrc"        % HOME)
+isxinit      = os.path.isfile("%s/.xinitrc"        % HOME)
+ismpd        = os.path.isfile("%s/.mpd/mpd.conf"   % HOME)
+iscanto      = os.path.isfile("%s/.canto/conf.py"  % HOME)
+isncmpcpp    = os.path.isfile("%s/.ncmpcpp/config" % HOME)
 # Testing the dirs is also important
-iscanto   = os.path.isdir("%s/.canto"   % HOME)
-ismpd     = os.path.isdir("%s/.mpd"     % HOME)
-isncmpcpp = os.path.isdir("%s/.ncmpcpp" % HOME)
-isechinus = os.path.isdir("%s/.echinus" % HOME)
-isscripts = os.path.isdir("%s/scripts"  % HOME)
-isvimdir  = os.path.isdir("%s/.vim"     % HOME)
-ismusic   = os.path.isdir("%s/music"    % HOME)
-isimages   = os.path.isdir("%s/images"   % HOME)
+isscripts = os.path.isdir("%s/scripts"             % HOME)
+isvimdir  = os.path.isdir("%s/.vim"                % HOME)
 
 # Having all the values in a dict makes it easier to test.
-tests = {'vimrc': isvim, 'bashrc': isbash, 'canto': iscanto,
-        'zshrc': iszsh, 'ourico': isourico, 'Xresources': isXresources,
-        'mpd': ismpd, 'ncmpcpp': isncmpcpp}
+#tests = {'vimrc': isvim, 'bashrc': isbash, 'canto': iscanto,
+#        'zshrc': iszsh, 'ourico': isourico, 'Xresources': isXresources,
+#        'mpd': ismpd, 'ncmpcpp': isncmpcpp}
 
 # We would not want to copy over the .dotfiles directory
 if not iscopy:
     # Giving out error messages.
     if isthere : 
-        print "You already have a .dotfiles dictonary."
+        print("You already have a .dotfiles dictonary.")
     else: 
-        print "Copy this to %s" % DOTDIR
+        print("Copy this to %s" % DOTDIR)
     sys.exit()
 
 # Disabled due to testing purposes
@@ -65,112 +60,90 @@ if not iscopy:
 
 #--------------------ADD ITEMS TO LINK OR LIST HERE---------------#
 # VIM
-print "Linking .vimrc...",
+print("Linking .vimrc...", end=' ')
 if not isvim and warn():
     os.system("ln -s %s/vimrc %s/.vimrc" % (DOTDIR, HOME))
 else:
-    print "Skipping."
+    print("Skipping.")
 
 # ZSH
-print "Linking .zshrc...",
+print("Linking .zshrc...", end=' ')
 if not iszsh and warn():
     os.system("ln -s %s/zshrc %s/.zshrc" % (DOTDIR, HOME)) 
 else:
-    print "Skipping."
+    print("Skipping.")
 
 # CANTO
-print "Linking .canto...",
+print("Linking .canto...", end=' ')
 if not iscanto and warn():
-    os.system("ln -s %s/canto/ %s/.canto" % (DOTDIR, HOME))
+    if not os.path.isdir("{0}/.canto/".format(HOME)):
+        os.system("mkdir {0}/.canto".format(HOME))
+    os.system("ln -s %s/config/cantoconf.py %s/.canto/conf.py" % (DOTDIR, HOME))
 else:
-    print "Skipping."
+    print("Skipping.")
 
 # XRESOURCES
-print "Linking .Xresources...",
+print("Linking .Xresources...", end=' ')
 if not isXresources and warn():
     os.system("ln -s %s/Xresources %s/.Xresources" % (DOTDIR, HOME))
 else:
-    print "Skipping."
-
-# ECHINUS
-print "Linking .echinus...",
-if not isechinus and warn():
-    os.system("ln -s %s/echinus %s/.echinus" % (DOTDIR, HOME))
-else:
-    print "Skipping."
+    print("Skipping.")
 
 # MPD
-print "Linking .mpd...",
+print("Linking .mpd...", end=' ')
 if not ismpd and warn():
-    os.system("ln -s %s/mpd %s/.mpd" % (DOTDIR, HOME))
+    if not os.path.isdir("{0}/.mpd".format(HOME)):
+        os.system("mkdir {0}/.mpd".format(HOME))
+    os.system("ln -s %s/config/mpd.conf %s/.mpd/mpd.conf" % (DOTDIR, HOME))
 else: 
-    print "Skipping."
+    print("Skipping.")
 
 # NCMPCPP
-print "Linking .ncmpcpp...",
+print("Linking .ncmpcpp...", end=' ')
 if not isncmpcpp and warn():
-    os.system("ln -s %s/ncmpcpp %s/.ncmpcpp" % (DOTDIR, HOME))
+    if not os.path.isdir("{0}/.ncmpcpp".format(HOME)):
+        os.system("mkdir {0}/.ncmpcpp".format(HOME))
+    os.system("ln -s %s/config/ncmpcppconf %s/.ncmpcpp/config" % (DOTDIR, HOME))
 else: 
-    print "Skipping."
+    print("Skipping.")
 
 # CONKY 
-print "Linking .conkyrc...",
+print("Linking .conkyrc...", end=' ')
 if not isconky and warn():
     os.system("ln -s %s/conkyrc %s/.conkyrc" % (DOTDIR, HOME))
 else: 
-    print "Skipping."
-
-# OURICO
-print "Linking .ouricorc...",
-if not isourico and warn():
-    os.system("ln -s %s/ouricorc %s/.ouricorc" % (DOTDIR, HOME))
-else: 
-    print "Skipping."
+    print("Skipping.")
 
 # XINIT
-print "Linking .xinitrc...",
+print("Linking .xinitrc...", end=' ')
 if not isxinit and warn():
     os.system("ln -s %s/xinitrc %s/.xinitrc" % (DOTDIR, HOME))
 else: 
-    print "Skipping."
+    print("Skipping.")
 
-# XINIT
-print "Linking scripts...",
+# SCRIPTS 
+print("Linking scripts...", end=' ')
 if not isscripts and warn():
     os.system("ln -s %s/scripts %s/scripts" % (DOTDIR, HOME))
 else: 
-    print "Skipping."
+    print("Skipping.")
 
 # VIM DIR
-print "Linking .vim...",
+print("Linking .vim...", end=' ')
 if not isvimdir and warn():
     os.system("ln -s %s/vim %s/.vim" % (DOTDIR, HOME))
 else: 
-    print "Skipping."
+    print("Skipping.")
 
 #------------------NON LINKING OPERATIONS---------------------#
 # I need to initalize the modules
-print "Starting git submodule init:"
+print("Starting git submodule init:")
 os.system("git submodule init")
 
 # Now we need to update them
-print "Starting git submodule update:"
+print("Starting git submodule update:")
 os.system("git submodule update")
 
-
-#-----------------THEREDMOOD SPECIFIC-----------------------------#
-done = raw_input("Are you TheRedMood? (Y/N): ")
-if done.lower() != "y":
-    sys.exit()
-# MUSIC
-print "Creating music/...",
-if not ismusic and warn():
-    os.system("mkdir %s/music" % (HOME))
-else: 
-    print "Skipping."
-
-print "Creating images/...",
-if not isimages and warn():
-    os.system("mkdir %s/images" % (HOME))
-else: 
-    print "Skipping."
+# Getting archey
+os.system("curl https://raw.github.com/djmelik/archey/master/archey > {0}/scripts/archey".format(HOME))
+os.system("chmod +x {0}/scripts/archey".format(HOME))

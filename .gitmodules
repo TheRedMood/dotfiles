@@ -16,3 +16,6 @@
 [submodule "vim/bundle/vim-powerline.vim"]
 	path = vim/bundle/vim-powerline.vim
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "fonts/bdf-twei"]
+	path = fonts/bdf-twei
+	url = https://github.com/neeee/bdf-tewi.git
