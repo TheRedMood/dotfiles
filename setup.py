@@ -1,5 +1,5 @@
 #!/usr/bin/python2.7
-# Script was first made the 
+# Script was first made the
 # 15. sep 2012
 # And it was made by: TheRedMood < Teodor Spaeren >
 #
@@ -8,132 +8,71 @@
 # I hope that you all have a nice day and enjoy the script!
 
 import os
-import sys
 
 # Global variables
 HOME = os.path.expanduser('~')
 DOTDIR = os.path.expanduser('~/.dotfiles')
 
+dotfiles = []
+class Dotfile:
+    """ A object for each file or directory that needs to be setup. """
+    def __init__(self, name, gitplace, sysplace, isdir=False, place=""):
+        self.name     = name
+        self.gitplace = gitplace
+        self.sysplace = sysplace
+        self.isdir    = isdir
+        self.place    = place
+
+        dotfiles.append(self)
+
+    def exists(self):
+        if self.isdir:
+            return os.path.isdir(self.sysplace)
+        else:
+            return os.path.isfile(self.sysplace)
+
+    def placetest(self):
+        if self.place != "" and not os.path.isdir(self.place):
+            os.system("mkdir {0}".format(self.place))
+
+    def link(self):
+        os.system("ln -s {0} {1}".format(self.gitplace, self.sysplace))
+
 # Functions
 def warn():
     answer = input("(Y/N): ")
-    if answer.lower() == 'y':
-        return True
+    if answer.lower() == 'y': return True
+    else: return False
+
+# We need all the DotFile objects. Here we have all file objects
+xres  = Dotfile("Xresources", "{0}/Xresources".format(DOTDIR),  "{0}/.Xresources".format(HOME))
+
+vim   = Dotfile("vim"  , "{0}/vimrc".format(DOTDIR)  , "{0}/.vimrc".format(HOME)  )
+zsh   = Dotfile("zsh"  , "{0}/zshrc".format(DOTDIR)  , "{0}/.zshrc".format(HOME)  )
+bash  = Dotfile("bash" , "{0}/bashrc".format(DOTDIR) , "{0}/.bashrc".format(HOME) )
+conky = Dotfile("conky", "{0}/conkyrc".format(DOTDIR), "{0}/.conkyrc".format(HOME))
+xinit = Dotfile("xinit", "{0}/xinitrc".format(DOTDIR), "{0}/.xinitrc".format(HOME))
+
+# We need to check directories to.
+scripts = Dotfile("scripts", "{0}/scripts".format(DOTDIR), "{0}/scripts".format(HOME), True)
+vimdir  = Dotfile("vimdir", "{0}/vim".format(DOTDIR), "{0}/.vim".format(HOME), True)
+
+# Here we have the cases where theres extra checking to be done
+mpd     = Dotfile("mpd", "{0}/config/mpd.conf".format(DOTDIR), "{0}/.mpd/mpd.conf".format(HOME), False, "{0}/.mpd/".format(HOME))
+canto   = Dotfile("canto", "{0}/config/cantoconf.py".format(DOTDIR), "{0}/.canto/conf.py".format(HOME), False, "{0}/.canto/".format(HOME))
+ncmpcpp = Dotfile("ncmpcpp", "{0}/config/ncmpcppconf".format(DOTDIR),  "{0}/.ncmpcpp/config".format(HOME), False, "{0}/.ncmpcpp".format(HOME))
+wmfs    = Dotfile("wmfs", "{0}/config/wmfs".format(DOTDIR), "{0}/.config/wmfs".format(HOME), True, "{0}/.config".format(HOME))
+
+
+# We need to use all the elements up there
+for dotfile in dotfiles:
+    print("Linking {0}...".format(dotfile.name), end=' ')
+
+    if not dotfile.exists() and warn():
+        dotfile.placetest()
+        dotfile.link()
     else:
-        return False 
-
-# All the tests
-iscopy  = os.getcwd() == DOTDIR
-isthere = os.path.isdir(DOTDIR)
-
-# We need to test the files to not overwrite anything!
-isvim        = os.path.isfile("%s/.vimrc"          % HOME)
-iszsh        = os.path.isfile("%s/.zshrc"          % HOME)
-isbash       = os.path.isfile("%s/.bashrc"         % HOME)
-isXresources = os.path.isfile("%s/.Xresources"     % HOME)
-isconky      = os.path.isfile("%s/.conkyrc"        % HOME)
-isxinit      = os.path.isfile("%s/.xinitrc"        % HOME)
-ismpd        = os.path.isfile("%s/.mpd/mpd.conf"   % HOME)
-iscanto      = os.path.isfile("%s/.canto/conf.py"  % HOME)
-isncmpcpp    = os.path.isfile("%s/.ncmpcpp/config" % HOME)
-# Testing the dirs is also important
-isscripts = os.path.isdir("%s/scripts"             % HOME)
-isvimdir  = os.path.isdir("%s/.vim"                % HOME)
-
-# Having all the values in a dict makes it easier to test.
-#tests = {'vimrc': isvim, 'bashrc': isbash, 'canto': iscanto,
-#        'zshrc': iszsh, 'ourico': isourico, 'Xresources': isXresources,
-#        'mpd': ismpd, 'ncmpcpp': isncmpcpp}
-
-# We would not want to copy over the .dotfiles directory
-if not iscopy:
-    # Giving out error messages.
-    if isthere : 
-        print("You already have a .dotfiles dictonary.")
-    else: 
-        print("Copy this to %s" % DOTDIR)
-    sys.exit()
-
-# Disabled due to testing purposes
-#for k, v in tests.iteritems():
-#    print k, v
-
-#--------------------ADD ITEMS TO LINK OR LIST HERE---------------#
-# VIM
-print("Linking .vimrc...", end=' ')
-if not isvim and warn():
-    os.system("ln -s %s/vimrc %s/.vimrc" % (DOTDIR, HOME))
-else:
-    print("Skipping.")
-
-# ZSH
-print("Linking .zshrc...", end=' ')
-if not iszsh and warn():
-    os.system("ln -s %s/zshrc %s/.zshrc" % (DOTDIR, HOME)) 
-else:
-    print("Skipping.")
-
-# CANTO
-print("Linking .canto...", end=' ')
-if not iscanto and warn():
-    if not os.path.isdir("{0}/.canto/".format(HOME)):
-        os.system("mkdir {0}/.canto".format(HOME))
-    os.system("ln -s %s/config/cantoconf.py %s/.canto/conf.py" % (DOTDIR, HOME))
-else:
-    print("Skipping.")
-
-# XRESOURCES
-print("Linking .Xresources...", end=' ')
-if not isXresources and warn():
-    os.system("ln -s %s/Xresources %s/.Xresources" % (DOTDIR, HOME))
-else:
-    print("Skipping.")
-
-# MPD
-print("Linking .mpd...", end=' ')
-if not ismpd and warn():
-    if not os.path.isdir("{0}/.mpd".format(HOME)):
-        os.system("mkdir {0}/.mpd".format(HOME))
-    os.system("ln -s %s/config/mpd.conf %s/.mpd/mpd.conf" % (DOTDIR, HOME))
-else: 
-    print("Skipping.")
-
-# NCMPCPP
-print("Linking .ncmpcpp...", end=' ')
-if not isncmpcpp and warn():
-    if not os.path.isdir("{0}/.ncmpcpp".format(HOME)):
-        os.system("mkdir {0}/.ncmpcpp".format(HOME))
-    os.system("ln -s %s/config/ncmpcppconf %s/.ncmpcpp/config" % (DOTDIR, HOME))
-else: 
-    print("Skipping.")
-
-# CONKY 
-print("Linking .conkyrc...", end=' ')
-if not isconky and warn():
-    os.system("ln -s %s/conkyrc %s/.conkyrc" % (DOTDIR, HOME))
-else: 
-    print("Skipping.")
-
-# XINIT
-print("Linking .xinitrc...", end=' ')
-if not isxinit and warn():
-    os.system("ln -s %s/xinitrc %s/.xinitrc" % (DOTDIR, HOME))
-else: 
-    print("Skipping.")
-
-# SCRIPTS 
-print("Linking scripts...", end=' ')
-if not isscripts and warn():
-    os.system("ln -s %s/scripts %s/scripts" % (DOTDIR, HOME))
-else: 
-    print("Skipping.")
-
-# VIM DIR
-print("Linking .vim...", end=' ')
-if not isvimdir and warn():
-    os.system("ln -s %s/vim %s/.vim" % (DOTDIR, HOME))
-else: 
-    print("Skipping.")
+        print("Skipping.")
 
 #------------------NON LINKING OPERATIONS---------------------#
 # I need to initalize the modules

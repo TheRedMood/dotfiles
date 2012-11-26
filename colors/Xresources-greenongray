@@ -1,0 +1,37 @@
+!urxvt color scheme:
+
+URxvt*background: #2B2B2B
+URxvt*foreground: #A2DBB4
+
+URxvt*colorUL: #86a2b0
+
+!black
+*color0:  #2B2B2B
+*color8:  #0E190E
+!red
+urxvt*color1:               #369D58
+urxvt*color9:               #216136
+
+!green
+urxvt*color2:               #34D4CC
+urxvt*color10:              #12B2B8
+
+!yellow
+urxvt*color3:               #6BBF59
+urxvt*color11:              #4D7E42
+
+!blue
+urxvt*color4:               #4F8F60
+urxvt*color12:              #228443
+
+!magenta
+urxvt*color5:               #268745
+urxvt*color13:              #216136
+
+!cyan
+urxvt*color6:               #397157
+urxvt*color14:              #1C6332
+
+!white
+*color7:  #A2DBB4
+*color15: #6AB07C
