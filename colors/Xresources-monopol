@@ -76,12 +76,12 @@ urxvt.colorUL:           #999999
 urxvt.underlineColor:    #999999
 urxvt.borderless:        true 
 
-!rxvt*font:*-*-fixed-medium-r-normal--*-110-*-*-*-*-iso8859-1
-!rxvt*boldFont:*-*-fixed-medium-r-normal--*-110-*-*-*-*-iso8859-1
+rxvt*font:*-*-fixed-medium-r-normal--*-110-*-*-*-*-iso8859-1
+rxvt*boldFont:*-*-fixed-medium-r-normal--*-110-*-*-*-*-iso8859-1
 !urxvt.font:              xft:Inconsolata:size=9
 !urxvt*boldFont:          xft:Inconsolata:size=9
-urxvt.font:              xft:Cousine:size=9
-urxvt.boldFont:          xft:Cousine:size=9
+urxvt.font:              xft:MonteCarlo:size=9
+urxvt*boldFont:          xft:MonteCarlo:size=9
 !urxvt.font:              xft:profont:pixelsize=12
 !urxvt*boldFont:          xft:profont:pixelsize=12
 rxvt.termName:          rxvt

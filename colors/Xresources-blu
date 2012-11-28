@@ -1,0 +1,49 @@
+! black
+URxvt*color0  : #d9d9d9
+URxvt*color8  : #a5a5a5
+! red
+URxvt*color1  : #b6848b
+URxvt*color9  : #e5bac0
+! purple
+URxvt*color2: #af8ac7
+URxvt*color10: #d7c7e2
+! green
+URxvt*color11: #b7d5c9
+URxvt*color3 : #95afa4
+! blue
+URxvt*color4  : #9693b5
+URxvt*color12 : #c9c7e3
+! magenta
+URxvt*color5: #c48ba7
+URxvt*color13 : #debfce
+! cyan
+URxvt*color14 : #afc2cf
+URxvt*color6  : #7b8f9b
+! white
+URxvt*color7 : #a5a5a5
+URxvt*color15 : #d9d9d9
+
+URxvt*scrollBar: false
+URxvt*background: #2c3035
+!URxvt*background: #201f27
+URxvt*foreground: #d9d9d9
+URxvt*cursorUnderline: true
+URxvt*cursorColor: #2c3035
+!URxvt*colorUL: #af8ac1
+!URxvt*colorBD: #af8ac1
+
+URxvt*font: xft:Monaco:pixelsize=11
+URxvt*boldFont: xft:Monaco:pixelzize=11
+
+!URxvt.perl-ext-common: default,tabbed
+!URxvt.tabbed.tabbar-fg: -1
+!URxvt.tabbed.tabbar-bg: -1
+!URxvt.tabbed.tab-fg:    -1
+!URxvt.tabbed.tab-bg:    -1
+
+! URxvt.keysym.Mod4-c: perl:clipboard:copy
+! URxvt.keysym.Mod4-v: perl:clipboard:paste
+
+URxvt.perl-ext: default,matcher
+URXvt.urlLauncher: /home/diavorian/nightly/firefox
+URxvt.matcher.button: 1

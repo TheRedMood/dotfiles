@@ -3,8 +3,7 @@ exec wmfs &
 wmpid=$! # Here, we save the PID of wmfs
 
 # Here we do all other jizz jazz
-#[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-
+xcompmgr -c &
 xrdb -merge ~/.Xresources
 nitrogen --restore &
 mpd &

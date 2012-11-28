@@ -1,4 +1,7 @@
-This is my simple file for collecting all my data.
+INFO
+====
+This was made by TheRedMood and is stolen from several others.
+Some of it is mine, some is others. Please give feedback and enjoy.
 
 You can figure this out for yourself while I get all the setupfiles
 right. Just remember that this is a project in progress, which will get better
@@ -6,12 +9,11 @@ over time.
 
 To fully harness the power of these config files you need:
 
-Echinus - WM
+WMFS    - WM
 Canto   - RSS reader
 conky   - realtime system info dsiplayer
 mpd     - music player deamon
 ncmpcpp - front end for mpd
-ourico  - panel for Echinus
 vim     - The best editor :)
 urxvt   - My favorite terminal
 zsh     - A shell

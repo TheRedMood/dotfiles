@@ -12,7 +12,7 @@
      # No name mean default
      # name = "default"
 
-     font = "terminus"
+     font = "Monaco"
 
      # Bars
      bars_width = 14
@@ -51,8 +51,8 @@
      # client_free_statusline = ""
 
      frame_bg = "#555555"
-     client_titlebar_width = 12
-     client_border_width = 1
+     client_titlebar_width = 0 
+     client_border_width = 0
 
    [/theme]
 
@@ -74,7 +74,7 @@
   # l  Launcher (will be expended at launcher use)
 
   [bar]
-     position = 1 
+     position = 0 
      screen = 0
      elements = "tlsy"   # element order in bar
      theme = "default"
@@ -97,7 +97,7 @@
   # Use no screen option or screen = -1 to set tag on each screen
   [tag]
       screen = -1
-      name = "1"
+      name = "main"
       # statusline=""
   [/tag]
 
