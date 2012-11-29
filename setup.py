@@ -56,13 +56,13 @@ xinit = Dotfile("xinit", "{0}/xinitrc".format(DOTDIR), "{0}/.xinitrc".format(HOM
 # We need to check directories to.
 scripts = Dotfile("scripts", "{0}/scripts".format(DOTDIR), "{0}/scripts".format(HOME), True)
 vimdir  = Dotfile("vimdir", "{0}/vim".format(DOTDIR), "{0}/.vim".format(HOME), True)
-
+fonts   = Dotfile("fonts", "{0}/fonts".format(DOTDIR), "{0}/.fonts".format(HOME), True)
 # Here we have the cases where theres extra checking to be done
 mpd     = Dotfile("mpd", "{0}/config/mpd.conf".format(DOTDIR), "{0}/.mpd/mpd.conf".format(HOME), False, "{0}/.mpd/".format(HOME))
 canto   = Dotfile("canto", "{0}/config/cantoconf.py".format(DOTDIR), "{0}/.canto/conf.py".format(HOME), False, "{0}/.canto/".format(HOME))
 ncmpcpp = Dotfile("ncmpcpp", "{0}/config/ncmpcppconf".format(DOTDIR),  "{0}/.ncmpcpp/config".format(HOME), False, "{0}/.ncmpcpp".format(HOME))
 wmfs    = Dotfile("wmfs", "{0}/config/wmfs".format(DOTDIR), "{0}/.config/wmfs".format(HOME), True, "{0}/.config".format(HOME))
-
+awesome    = Dotfile("awesome", "{0}/config/awesome".format(DOTDIR), "{0}/.config/awesome".format(HOME), True, "{0}/.config".format(HOME))
 
 # We need to use all the elements up there
 for dotfile in dotfiles:
@@ -71,17 +71,17 @@ for dotfile in dotfiles:
     if not dotfile.exists() and warn():
         dotfile.placetest()
         dotfile.link()
-    else:
+    elif dotfile.exists():
         print("Skipping.")
 
 #------------------NON LINKING OPERATIONS---------------------#
 # I need to initalize the modules
 print("Starting git submodule init:")
-os.system("git submodule init")
+os.system("git --git-dir={0}/.git/ submodule init".format(DOTDIR))
 
 # Now we need to update them
 print("Starting git submodule update:")
-os.system("git submodule update")
+os.system("git --git-dir={0}/.git/ submodule update".format(DOTDIR))
 
 # Getting archey
 os.system("curl https://raw.github.com/djmelik/archey/master/archey > {0}/scripts/archey".format(HOME))
