@@ -8,4 +8,7 @@ xrdb -merge ~/.Xresources &
 nitrogen --restore &
 mpd &
 
+# fonts
+xset +fp /usr/share/fonts/local
+xset fp rehash
 #wait $wmpid # Here we are wainting for the end of WMFS, wmfs -c quit

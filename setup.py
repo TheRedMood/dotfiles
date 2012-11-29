@@ -86,3 +86,6 @@ os.system("git --git-dir={0}/.git/ submodule update".format(DOTDIR))
 # Getting archey
 os.system("curl https://raw.github.com/djmelik/archey/master/archey > {0}/scripts/archey".format(HOME))
 os.system("chmod +x {0}/scripts/archey".format(HOME))
+
+# Fonts
+os.system("fc-cache -vf")
