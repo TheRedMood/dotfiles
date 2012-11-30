@@ -13,10 +13,10 @@ alias grep="grep --color=auto"
 
 # EXPORTING THE PROMPTS
 prompt walters
-#export PROMPT="[%{$fg[yellow]%}%B%n%b%{$reset_color%}]::[%{$fg[yellow]%}%B%~%b%{$reset_color%}] "
-#precmd() { print "┌─[%{$fg[green]%}{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}]"}
-precmd() { print "┌─[$fg[green]$USER$reset_color][$fg[green]`pwd`$reset_color]"}
-export PROMPT="└─╼ "
+# export PROMPT="[%{$fg[yellow]%}%B%n%b%{$reset_color%}]::[%{$fg[yellow]%}%B%~%b%{$reset_color%}] "
+export PROMPT="┌─[%{$fg[green]%}%n%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}]
+└─╼ "
+
 # PATH SETTINGS
 PATH=$PATH:$HOME/scripts
 export PATH

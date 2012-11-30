@@ -6,6 +6,8 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
+-- Widget libary
+vicious = require("vicious")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -34,7 +36,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/themes/brownmood/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -71,7 +73,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag({ "main", "dev", "com", 4, 5, 6, 7, 8, 9 }, s, layouts[1])
 end
 -- }}}
 
@@ -94,6 +96,11 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 -- {{{ Wibox
+-- Memory usage
+memwidget = widget({ type = "textbox" })
+-- Register widget
+vicious.register(memwidget, vicious.widgets.mem, "$1% ($2MB/$3MB)", 5)
+
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
 
@@ -178,6 +185,7 @@ for s = 1, screen.count() do
         mytextclock,
         s == 1 and mysystray or nil,
         mytasklist[s],
+        memwidget,
         layout = awful.widget.layout.horizontal.rightleft
     }
 end

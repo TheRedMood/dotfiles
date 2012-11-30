@@ -5,8 +5,9 @@ exec awesome
 # Here we do all other jizz jazz
 xcompmgr -c &
 xrdb -merge ~/.Xresources &
-nitrogen --restore &
-mpd &
+#nitrogen --restore &
+eval `cat ~/scripts/fehbg`
+mpD &
 
 # fonts
 xset +fp /usr/share/fonts/local
