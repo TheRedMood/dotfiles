@@ -9,7 +9,7 @@ over time.
 
 To fully harness the power of these config files you need:
 
-WMFS    - WM
+Awesome - WM
 Canto   - RSS reader
 conky   - realtime system info dsiplayer
 mpd     - music player deamon
@@ -18,5 +18,6 @@ vim     - The best editor :)
 urxvt   - My favorite terminal
 zsh     - A shell
 dmenu   - A programs launcher
+feh     - For setting background!
 
 The setup file relays on python.
