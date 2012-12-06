@@ -49,7 +49,7 @@ xterm*saveLines:         512
 !urxvt*boldFont:          -proggytiny-*-*-*-*-10-*-*-*-*-*-*-*
 !urxvt.font:              xft:proggytiny:pixelsize=10
 !urxvt*boldFont:          xft:proggytiny:pixelsize=10
-urxvt.termName:          urxvt
+urxvt.termName:          xterm
 urxvt.scrollBar:         false
 !urxvt.backgroundPixmap:  /home/vermaden/.themes/urxvt.back.xpm
 urxvt.imLocale:          en_US.UTF-8

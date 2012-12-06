@@ -16,3 +16,6 @@ mpd/mpd.log
 mpd/mpd.pid
 mpd/playlists/*
 mpd/mpdstates
+
+# Scripts
+scripts/archey
