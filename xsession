@@ -9,4 +9,4 @@ mpd &
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
-exec ~/dwm/dwm
+exec ~/.dwm/dwm
