@@ -1,5 +1,12 @@
 #!/bin/bash
 
 xrdb -merge .Xresources
+xcompmgr -c &
+nitrogen --restore &
+mpd &
 
-exec dwm
+# fonts
+xset +fp /usr/share/fonts/local
+xset fp rehash
+
+exec ~/dwm/dwm

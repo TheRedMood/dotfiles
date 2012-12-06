@@ -10,6 +10,7 @@ zstyle ':completion:*' menu select
 # CONFIGURING ALIASES
 alias ls="ls --color=auto"   
 alias grep="grep --color=auto"
+alias dbox="dropbox.py"
 
 # EXPORTING THE PROMPTS
 prompt walters
