@@ -1,12 +1,16 @@
 #!/bin/bash
 
 xrdb -merge .Xresources
-xcompmgr -c &
+#xcompmgr -c &
 nitrogen --restore &
 mpd &
+~/.dropbox-dist/dropboxd & 
 
 # fonts
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
-exec ~/.dwm/dwm
+
+#conky | while read -r; do xsetroot -name "$REPLY"; done &
+#exec ~/.dwm/dwm
+exec herbstluftwm

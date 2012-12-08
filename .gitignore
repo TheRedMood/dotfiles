@@ -20,3 +20,7 @@ mpd/mpdstates
 # Scripts
 scripts/archey
 scripts/inxi
+
+
+# Build files
+*.o

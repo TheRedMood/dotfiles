@@ -9,6 +9,7 @@ set laststatus=2
 set encoding=utf-8
 let g:Powerline_symbols = 'compatible'
 
+
 " Tabs
 set tabstop=4
 set shiftwidth=4
@@ -21,9 +22,9 @@ set autoindent
 set nu
 
 " Looks
-"set background=light " you can use `dark` or `light` as your background
-syntax on
-color mango
+set background=dark " you can use `dark` or `light` as your background
+syntax enable
+ " colorscheme distinguished
 
 " NERDtree stuff
 map <F4> :NERDTreeToggle<cr>

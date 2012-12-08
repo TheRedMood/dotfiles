@@ -19,3 +19,9 @@
 [submodule "fonts/bdf-twei"]
 	path = fonts/bdf-twei
 	url = https://github.com/neeee/bdf-tewi.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/vim-distinguished"]
+	path = vim/bundle/vim-distinguished
+	url = https://github.com/Lokaltog/vim-distinguished.git

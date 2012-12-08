@@ -7,17 +7,27 @@ promptinit
 # Sets the compeltion to be menudriven
 zstyle ':completion:*' menu select
 
+# Settting the terminal
+export TERM=xterm-256color
+
 # CONFIGURING ALIASES
 alias ls="ls --color=auto"   
 alias grep="grep --color=auto"
 alias dbox="dropbox.py"
+alias emcs="emacsclient -c &"
+alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
 # EXPORTING THE PROMPTS
 prompt walters
-# export PROMPT="[%{$fg[yellow]%}%B%n%b%{$reset_color%}]::[%{$fg[yellow]%}%B%~%b%{$reset_color%}] "
 export PROMPT="┌─[%{$fg[green]%}%n%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}]
 └─╼ "
 
 # PATH SETTINGS
 PATH=$PATH:$HOME/scripts
 export PATH
+
+# emacs stuff
+export EDITOR="emacsclient"
+export VISAUL=$EDITOR
+export ALTERNATE_EDITOR=""
+
