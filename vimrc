@@ -24,7 +24,10 @@ set nu
 " Looks
 set background=dark " you can use `dark` or `light` as your background
 syntax enable
- " colorscheme distinguished
+colorscheme desert
+
+" backspaces
+set backspace=indent,eol,start
 
 " NERDtree stuff
 map <F4> :NERDTreeToggle<cr>
