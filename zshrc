@@ -27,7 +27,7 @@ PATH=$PATH:$HOME/scripts
 export PATH
 
 # emacs stuff
-export EDITOR="emacsclient"
+export EDITOR="vim"
 export VISAUL=$EDITOR
 export ALTERNATE_EDITOR=""
 

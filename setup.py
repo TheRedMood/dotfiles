@@ -64,6 +64,7 @@ dwm     = Dotfile("dwm", "{0}/dwm".format(DOTDIR), "{0}/.dwm".format(HOME), True
 mpd     = Dotfile("mpd", "{0}/config/mpd.conf".format(DOTDIR), "{0}/.mpd/mpd.conf".format(HOME), False, "{0}/.mpd/".format(HOME))
 canto   = Dotfile("canto", "{0}/config/cantoconf.py".format(DOTDIR), "{0}/.canto/conf.py".format(HOME), False, "{0}/.canto/".format(HOME))
 ncmpcpp = Dotfile("ncmpcpp", "{0}/config/ncmpcppconf".format(DOTDIR),  "{0}/.ncmpcpp/config".format(HOME), False, "{0}/.ncmpcpp".format(HOME))
+herbstluft = Dotfile("herbstluftwm", "{0}/config/herbstluftwm".format(DOTDIR), "{0}/.config/herbstluftwm".format(HOME), True, "{0}/.config".format(HOME))
 
 # We need to use all the elements up there
 for dotfile in dotfiles:
