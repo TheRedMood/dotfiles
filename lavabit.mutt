@@ -1,0 +1,41 @@
+color status red black
+color normal white black
+
+# Change the following six lines to match your Gmail account details
+set imap_user = "USERNAME@lavabit.com"
+set imap_pass = "PASSWORD"
+set smtp_url = "smtp://EMAIL@lavabit.com:587/"
+set smtp_pass = "PASSWORD"
+set from = "USERNAME@lavabit.com"
+set realname = "Teodor Spæren"
+
+# Change the following line to a different editor you prefer.
+set editor = "vim"
+
+# Basic config, you can leave this as is
+set folder = "imaps://lavabit.com:993"
+set spoolfile = "+INBOX"
+set imap_check_subscribed
+set hostname = lavabit.com
+set mail_check = 120
+set timeout = 300
+set imap_keepalive = 300
+set postponed = "+[lavabit]/Drafts"
+set record = "+[lavabit]/Sent"
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+set move = no
+set include
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+set auto_tag = yes
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+alternative_order text/plain text/html *
+auto_view text/html
+bind editor <Tab> complete-query
+bind editor ^T complete
+bind editor <space> noop 

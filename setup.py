@@ -48,7 +48,7 @@ def warn():
 xres  = Dotfile("Xresources", "{0}/Xresources".format(DOTDIR),  "{0}/.Xresources".format(HOME))
 
 vim   = Dotfile("vim"     , "{0}/vimrc".format(DOTDIR)   , "{0}/.vimrc".format(HOME)   )
-zsh   = Dotfile("zsh"     , "{0}/zshrc".format(DOTDIR)   , "{0}/.zshrc".format(HOME)   )
+zsh   = Dotfile("zsh"     , "{0}/zsh/zshrc".format(DOTDIR)   , "{0}/.zshrc".format(HOME)   )
 bash  = Dotfile("bash"    , "{0}/bashrc".format(DOTDIR)  , "{0}/.bashrc".format(HOME)  )
 conky = Dotfile("conky"   , "{0}/conkyrc".format(DOTDIR) , "{0}/.conkyrc".format(HOME) )
 xinit = Dotfile("xinit"   , "{0}/xinitrc".format(DOTDIR) , "{0}/.xinitrc".format(HOME) )
@@ -58,14 +58,13 @@ xsess = Dotfile("xsession", "{0}/xsession".format(DOTDIR), "{0}/.xsession".forma
 scripts = Dotfile("scripts", "{0}/scripts".format(DOTDIR), "{0}/scripts".format(HOME), True)
 vimdir  = Dotfile("vimdir", "{0}/vim".format(DOTDIR), "{0}/.vim".format(HOME), True)
 fonts   = Dotfile("fonts", "{0}/fonts".format(DOTDIR), "{0}/.fonts".format(HOME), True)
-dwm     = Dotfile("dwm", "{0}/dwm".format(DOTDIR), "{0}/.dwm".format(HOME), True)
+#dwm     = Dotfile("dwm", "{0}/dwm".format(DOTDIR), "{0}/.dwm".format(HOME), True)
 
 # Here we have the cases where theres extra checking to be done
 mpd     = Dotfile("mpd", "{0}/config/mpd.conf".format(DOTDIR), "{0}/.mpd/mpd.conf".format(HOME), False, "{0}/.mpd/".format(HOME))
 canto   = Dotfile("canto", "{0}/config/cantoconf.py".format(DOTDIR), "{0}/.canto/conf.py".format(HOME), False, "{0}/.canto/".format(HOME))
 ncmpcpp = Dotfile("ncmpcpp", "{0}/config/ncmpcppconf".format(DOTDIR),  "{0}/.ncmpcpp/config".format(HOME), False, "{0}/.ncmpcpp".format(HOME))
-herbstluft = Dotfile("herbstluftwm", "{0}/config/herbstluftwm".format(DOTDIR), "{0}/.config/herbstluftwm".format(HOME), True, "{0}/.config".format(HOME))
-
+herbstluftwm = Dotfile("herbstluft", "{0}/config/herbstluftwm".format(DOTDIR), "{0}/.config/herbstluftwm".format(HOME), True, "{0}/.config".format(HOME))
 # We need to use all the elements up there
 for dotfile in dotfiles:
     print("Linking {0}...".format(dotfile.name), end=' ')

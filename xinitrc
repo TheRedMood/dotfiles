@@ -1,6 +1,9 @@
 #!/bin/bash
 
-xrdb -merge .Xresources
+
+xrdb ~/dotfiles/colors/Xresources-thayers
+xrdb -merge ~/.Xresources
+
 #xcompmgr -c &
 nitrogen --restore &
 mpd &
