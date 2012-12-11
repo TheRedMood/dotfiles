@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-xrdb ~/dotfiles/colors/Xresources-thayers
+xrdb ~/.dotfiles/colors/Xresources-tommytiger
 xrdb -merge ~/.Xresources
 
 #xcompmgr -c &
@@ -13,6 +13,7 @@ mpd &
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
+setxkbmap no
 
 #conky | while read -r; do xsetroot -name "$REPLY"; done &
 #exec ~/.dwm/dwm
