@@ -26,7 +26,7 @@ export PROMPT="┌─[%{$fg[green]%}%n%{$reset_color%}][%{$fg[green]%}%~%{$reset
 PATH=$PATH:$HOME/scripts
 export PATH
 
-# emacs stuff
+# Editorz!
 export EDITOR="vim"
 export VISAUL=$EDITOR
 export ALTERNATE_EDITOR=""
