@@ -1,6 +1,10 @@
+# OPTS?
+#setopt prompt_subst
+
 # LOADING IN THE DIFFRENT THINGS!
 autoload -U compinit promptinit
 autoload -U colors && colors
+#autoload -Uz vcs_info
 compinit
 promptinit
 
@@ -18,12 +22,64 @@ alias emcs="emacsclient -c &"
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
 # EXPORTING THE PROMPTS
+function __git_prompt {
+  local DIRTY="%{$fg[yellow]%}"
+  local CLEAN="%{$fg[green]%}"
+  local UNMERGED="%{$fg[red]%}"
+  local RESET="%{$terminfo[sgr0]%}"
+  git rev-parse --git-dir >& /dev/null
+  if [[ $? == 0 ]]
+  then
+    echo -n "["
+    if [[ `git ls-files -u >& /dev/null` == '' ]]
+    then
+      git diff --quiet >& /dev/null
+      if [[ $? == 1 ]]
+      then
+        echo -n $DIRTY
+      else
+        git diff --cached --quiet >& /dev/null
+        if [[ $? == 1 ]]
+        then
+          echo -n $DIRTY
+        else
+          echo -n $CLEAN
+        fi
+      fi
+    else
+      echo -n $UNMERGED
+    fi
+    echo -n `git branch | grep '* ' | sed 's/..//'`
+    echo -n $RESET
+    echo -n "]"
+  fi
+}
+
+# GIT PROMPTS
+#zstyle ':vcs_info:*' stagedstr 'M' 
+#zstyle ':vcs_info:*' unstagedstr 'M' 
+#zstyle ':vcs_info:*' check-for-changes true
+#zstyle ':vcs_info:*' actionformats '%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+#zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5}] %F{2}%c%F{3}%u%f'
+#zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+#zstyle ':vcs_info:*' enable git 
+#+vi-git-untracked() {
+#  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+#    git status --porcelain | grep '??' &> /dev/null ; then
+#    hook_com[unstaged]+='%F{1}??%f'
+#  fi  
+#}
+
+#precmd () { vcs_info }
+#PROMPT='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_} %f%# '
+
+# LET GET THE PROMPT ON!
 prompt walters
-export PROMPT="┌─[%{$fg[green]%}%n%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}]
+export PROMPT="┌─[%{$fg[green]%}%n%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}][%T]
 └─╼ "
 
 # PATH SETTINGS
-PATH=$PATH:$HOME/scripts
+PATH=$PATH:$HOME/scripts:$HOME/bin:$HOME/bin/depot_tools/
 export PATH
 
 # Editorz!
