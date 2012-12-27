@@ -45,3 +45,6 @@ set directory=~/.dotfiles/vim/tmpfiles,.
 
 " Setting up Tags list settings
 nnoremap <silent> <F8> :TlistToggle<CR>
+
+" Templates
+autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
