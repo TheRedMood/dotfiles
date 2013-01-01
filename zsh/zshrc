@@ -16,11 +16,12 @@ alias grep="grep --color=auto"
 alias dbox="dropbox.py"
 alias emcs="emacsclient -c &"
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+alias tmuxpaste='tmux save-buffer - | wgetpaste'
 
 # LET GET THE PROMPT ON!
 prompt walters
 export PROMPT="┌─[%{$fg[green]%}%n%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}][%T]
-└─╼ "
+└─>) "
 
 # PATH SETTINGS
 PATH=$PATH:$HOME/scripts:$HOME/bin:$HOME/bin/depot_tools/
