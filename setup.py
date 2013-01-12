@@ -65,6 +65,8 @@ mpd     = Dotfile("mpd", "{0}/config/mpd.conf".format(DOTDIR), "{0}/.mpd/mpd.con
 canto   = Dotfile("canto", "{0}/config/cantoconf.py".format(DOTDIR), "{0}/.canto/conf.py".format(HOME), False, "{0}/.canto/".format(HOME))
 ncmpcpp = Dotfile("ncmpcpp", "{0}/config/ncmpcppconf".format(DOTDIR),  "{0}/.ncmpcpp/config".format(HOME), False, "{0}/.ncmpcpp".format(HOME))
 herbstluftwm = Dotfile("herbstluft", "{0}/config/herbstluftwm".format(DOTDIR), "{0}/.config/herbstluftwm".format(HOME), True, "{0}/.config".format(HOME))
+xmonad  = Dotfile("xmonad", "{0}/config/xmonad/xmonad.hs".format(DOTDIR), "{0}/.xmonad/xmonad.hs".format(HOME), False, "{0}/.xmonad".format(HOME))
+
 # We need to use all the elements up there
 for dotfile in dotfiles:
     print("Linking {0}...".format(dotfile.name), end=' ')

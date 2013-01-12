@@ -13,8 +13,12 @@ mpd &
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
-setxkbmap no
+setxkbmap -layout no
+
+# this is xmonad stuff
+xsetroot -cursor_name left_ptr
 
 #conky | while read -r; do xsetroot -name "$REPLY"; done &
-#exec ~/.dwm/dwm
-exec herbstluftwm
+#exec dwm
+#exec herbstluftwm
+exec xmonad
