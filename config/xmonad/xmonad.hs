@@ -1,7 +1,19 @@
+<<<<<<< HEAD
 -- Teodor Spæren First xmonad config
 -- Normally, you'd only override those defaults you care about.
 
 -- Imports
+=======
+--
+-- xmonad example config file.
+--
+-- A template showing all available configuration hooks,
+-- and how to override the defaults in your own xmonad.hs conf file.
+--
+-- Normally, you'd only override those defaults you care about.
+--
+
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
 import XMonad
 import Data.Monoid
 import System.Exit
@@ -9,6 +21,7 @@ import System.Exit
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
+<<<<<<< HEAD
 -- Variables
 redTerminal      = "urxvt"
 
@@ -33,11 +46,56 @@ redWorkspaces    = ["main","irc","web","code","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 redNormalBorderColor  = "#dddddd"
 redFocusedBorderColor = "#ff0000"
+=======
+-- The preferred terminal program, which is used in a binding below and by
+-- certain contrib modules.
+--
+myTerminal      = "urxvt"
+
+-- Whether focus follows the mouse pointer.
+myFocusFollowsMouse :: Bool
+myFocusFollowsMouse = True
+
+-- Whether clicking on a window to focus also passes the click to the window
+myClickJustFocuses :: Bool
+myClickJustFocuses = False
+
+-- Width of the window border in pixels.
+--
+myBorderWidth   = 1
+
+-- modMask lets you specify which modkey you want to use. The default
+-- is mod1Mask ("left alt").  You may also consider using mod3Mask
+-- ("right alt"), which does not conflict with emacs keybindings. The
+-- "windows key" is usually mod4Mask.
+--
+myModMask       = mod1Mask
+
+-- The default number of workspaces (virtual screens) and their names.
+-- By default we use numeric strings, but any string may be used as a
+-- workspace name. The number of workspaces is determined by the length
+-- of this list.
+--
+-- A tagging example:
+--
+-- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
+--
+myWorkspaces    = ["main","irc","web","code","5","6","7","8","9"]
+
+-- Border colors for unfocused and focused windows, respectively.
+--
+myNormalBorderColor  = "#dddddd"
+myFocusedBorderColor = "#ff0000"
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
+<<<<<<< HEAD
 redKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
+=======
+myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
 
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
@@ -78,6 +136,11 @@ redKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Swap the focused window with the next window
     , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  )
 
+<<<<<<< HEAD
+=======
+    -- Swap the focused window with the previous window
+    , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
 
     -- Shrink the master area
     , ((modm,               xK_h     ), sendMessage Shrink)
@@ -132,7 +195,11 @@ redKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 ------------------------------------------------------------------------
 -- Mouse bindings: default actions bound to mouse events
 --
+<<<<<<< HEAD
 redMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
+=======
+myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
 
     -- mod-button1, Set the window to floating mode and move by dragging
     [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w
@@ -159,7 +226,11 @@ redMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
+<<<<<<< HEAD
 redLayout = tiled ||| Mirror tiled ||| Full
+=======
+myLayout = tiled ||| Mirror tiled ||| Full
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -188,7 +259,11 @@ redLayout = tiled ||| Mirror tiled ||| Full
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 --
+<<<<<<< HEAD
 redManageHook = composeAll
+=======
+myManageHook = composeAll
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
@@ -203,7 +278,11 @@ redManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
+<<<<<<< HEAD
 redEventHook = mempty
+=======
+myEventHook = mempty
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -211,7 +290,11 @@ redEventHook = mempty
 -- Perform an arbitrary action on each internal state change or X event.
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
+<<<<<<< HEAD
 redLogHook = return ()
+=======
+myLogHook = return ()
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
 
 ------------------------------------------------------------------------
 -- Startup hook
@@ -221,13 +304,18 @@ redLogHook = return ()
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
+<<<<<<< HEAD
 redStartupHook = return ()
+=======
+myStartupHook = return ()
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
+<<<<<<< HEAD
 --main = xmonad defaults
 main = xmonad redmood
 
@@ -252,4 +340,35 @@ redmood = defaultConfig {
         handleEventHook    = redEventHook,
         logHook            = redLogHook,
         startupHook        = redStartupHook
+=======
+main = xmonad defaults
+
+-- A structure containing your configuration settings, overriding
+-- fields in the default config. Any you don't override, will
+-- use the defaults defined in xmonad/XMonad/Config.hs
+--
+-- No need to modify this.
+--
+defaults = defaultConfig {
+      -- simple stuff
+        terminal           = myTerminal,
+        focusFollowsMouse  = myFocusFollowsMouse,
+        clickJustFocuses   = myClickJustFocuses,
+        borderWidth        = myBorderWidth,
+        modMask            = myModMask,
+        workspaces         = myWorkspaces,
+        normalBorderColor  = myNormalBorderColor,
+        focusedBorderColor = myFocusedBorderColor,
+
+      -- key bindings
+        keys               = myKeys,
+        mouseBindings      = myMouseBindings,
+
+      -- hooks, layouts
+        layoutHook         = myLayout,
+        manageHook         = myManageHook,
+        handleEventHook    = myEventHook,
+        logHook            = myLogHook,
+        startupHook        = myStartupHook
+>>>>>>> ecb1fc0cfe44d595acd5dbffc5546aab0812629d
     }
