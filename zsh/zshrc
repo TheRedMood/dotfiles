@@ -32,3 +32,22 @@ export EDITOR="vim"
 export VISAUL=$EDITOR
 export ALTERNATE_EDITOR=""
 
+# LOOGS!
+export HISTSIZE=1000 # Number of lines kept in history
+export SAVEHIST=1000 # number of lines saved in the history after logout
+
+# location of history
+export HISTFILE=~/.zhistory
+
+# Enable logging across shells
+setopt share_history
+setopt inc_append_history
+
+# DISTRO SPECIFIC STUFF!
+
+# ARCH LINUX SPECIFIX STUFF
+
+# Handeling pacman-color
+alias pacman='PACMAN=/usr/bin/pacman; [ -f /usr/bin/pacman-color ] && PACMAN=/usr/bin/pacman-color; $PACMAN $@'
+# aliases
+alias apl="pacman -Qi | awk '/^Name/ {pkg=\$3} /Size/ {print \$4\$5,pkg}' | sort -n" 
