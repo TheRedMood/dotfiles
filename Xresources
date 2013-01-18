@@ -44,7 +44,7 @@ urxvt.saveLines:         512
 urxvt.boldMode:          false
 urxvt.inheritPixmap:     false
 urxvt.shading:           40
-urxvt.xftAntialias:      falsee
+urxvt.xftAntialias:      false
 urxvt.jumpScroll:        true
 urxvt.tintColor:         white
 urxvt.internalBorder:    0
