@@ -15,7 +15,7 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias dbox="dropbox.py"
 alias emcs="emacsclient -c &"
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+alias lstree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias tmuxpaste='tmux save-buffer - | wgetpaste'
 
 # LET GET THE PROMPT ON!
@@ -42,12 +42,9 @@ export HISTFILE=~/.zhistory
 # Enable logging across shells
 setopt share_history
 setopt inc_append_history
-<<<<<<< HEAD
 
-# DISTRO SPECIFIC STUFF!
 
 # ARCH LINUX SPECIFIX STUFF
-
 # Handeling pacman-color
 alias pacman='PACMAN=/usr/bin/pacman; [ -f /usr/bin/pacman-color ] && PACMAN=/usr/bin/pacman-color; $PACMAN $@'
 # aliases
