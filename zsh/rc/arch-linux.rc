@@ -1,0 +1,7 @@
+# ARCH LINUX SPECIFIX STUFF
+# Handeling pacman-color
+alias pacman='PACMAN=/usr/bin/pacman; [ -f /usr/bin/pacman-color ] && PACMAN=/usr/bin/pacman-color; $PACMAN $@'
+# aliases
+alias apl="pacman -Qi | awk '/^Name/ {pkg=\$3} /Size/ {print \$4\$5,pkg}' | sort -n" 
+
+# vim: set ft=zsh:

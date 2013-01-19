@@ -2,6 +2,7 @@ call pathogen#infect()
 
 filetype plugin indent on
 filetype plugin on
+filetype on
 
 "Powerline stuff
 set nocompatible
@@ -9,7 +10,8 @@ set laststatus=2
 set encoding=utf-8
 let g:Powerline_symbols = 'compatible'
 
-
+" Mod line
+set modeline
 " Tabs
 set tabstop=4
 set shiftwidth=4

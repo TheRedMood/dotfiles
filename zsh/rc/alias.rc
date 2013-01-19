@@ -1,0 +1,15 @@
+# = ALIAS =
+alias grep="grep --color=auto"
+alias dbox="dropbox.py"
+alias emcs="emacsclient -c &"
+alias lstree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+alias tmuxpaste='tmux save-buffer - | wgetpaste'
+
+# testing what ls command to use
+if ls --version > /dev/null 2>&1 ; then
+    alias ls="ls --color=auto"
+else
+    alias ls="ls -GF"
+fi
+
+# vim: set ft=zsh:

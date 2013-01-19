@@ -58,7 +58,6 @@ xsess = Dotfile("xsession", "{0}/xsession".format(DOTDIR), "{0}/.xsession".forma
 scripts = Dotfile("scripts", "{0}/scripts".format(DOTDIR), "{0}/scripts".format(HOME), True)
 vimdir  = Dotfile("vimdir", "{0}/vim".format(DOTDIR), "{0}/.vim".format(HOME), True)
 fonts   = Dotfile("fonts", "{0}/fonts".format(DOTDIR), "{0}/.fonts".format(HOME), True)
-#dwm     = Dotfile("dwm", "{0}/dwm".format(DOTDIR), "{0}/.dwm".format(HOME), True)
 
 # Here we have the cases where theres extra checking to be done
 mpd     = Dotfile("mpd", "{0}/config/mpd.conf".format(DOTDIR), "{0}/.mpd/mpd.conf".format(HOME), False, "{0}/.mpd/".format(HOME))
@@ -66,6 +65,8 @@ canto   = Dotfile("canto", "{0}/config/cantoconf.py".format(DOTDIR), "{0}/.canto
 ncmpcpp = Dotfile("ncmpcpp", "{0}/config/ncmpcppconf".format(DOTDIR),  "{0}/.ncmpcpp/config".format(HOME), False, "{0}/.ncmpcpp".format(HOME))
 herbstluftwm = Dotfile("herbstluft", "{0}/config/herbstluftwm".format(DOTDIR), "{0}/.config/herbstluftwm".format(HOME), True, "{0}/.config".format(HOME))
 xmonad  = Dotfile("xmonad", "{0}/config/xmonad/xmonad.hs".format(DOTDIR), "{0}/.xmonad/xmonad.hs".format(HOME), False, "{0}/.xmonad".format(HOME))
+zshcolors = Dotfile("zshcolors", "{0}/zsh/colors".format(DOTDIR), "{0}/.zsh/colors".format(HOME), False, "{0}/.zsh".format(HOME))
+zshrc = Dotfile("zshrc", "{0}/zsh/rc".format(DOTDIR), "{0}/.zsh/rc".format(HOME), True, "{0}/.zsh".format(HOME))
 
 # We need to use all the elements up there
 for dotfile in dotfiles:

@@ -1,0 +1,33 @@
+# = COMPLETION =
+# Sets the compeltion to be menudriven
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Cache
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# Preventing CVS files from being completed
+zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/)CVS'
+zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
+
+# Fuzzy matching
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+
+# ingore completion for commands I don't have
+zstyle ':completion:*:functions' ignored-patterns '_*'
+
+# Cutting away the / in directories
+zstyle ':completion:*' squeeze-slashes true
+
+# Cd will never select the parent directory
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+# Incase sensitive matching
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# vim: set ft=zsh :

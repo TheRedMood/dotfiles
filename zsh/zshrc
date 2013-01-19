@@ -4,27 +4,8 @@ autoload -U colors && colors
 compinit
 promptinit
 
-# Sets the compeltion to be menudriven
-zstyle ':completion:*' menu select
-
-# Settting the terminal
-export TERM=xterm-256color
-
-# CONFIGURING ALIASES
-alias ls="ls --color=auto"   
-alias grep="grep --color=auto"
-alias dbox="dropbox.py"
-alias emcs="emacsclient -c &"
-alias lstree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
-alias tmuxpaste='tmux save-buffer - | wgetpaste'
-
-# LET GET THE PROMPT ON!
-prompt walters
-export PROMPT="┌─[%{$fg[green]%}%n%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}][%T]
-└─>) "
-
-# PATH SETTINGS
-PATH=$PATH:$HOME/scripts:$HOME/bin:$HOME/bin/depot_tools/
+# = VARIABLES =
+PATH=/usr/local/bin/:$PATH:$HOME/scripts:$HOME/bin:$HOME/bin/depot_tools/
 export PATH
 
 # Editorz!
@@ -32,20 +13,19 @@ export EDITOR="vim"
 export VISAUL=$EDITOR
 export ALTERNATE_EDITOR=""
 
-# LOOGS!
-export HISTSIZE=1000 # Number of lines kept in history
-export SAVEHIST=1000 # number of lines saved in the history after logout
+# Settting the terminal
+export TERM=xterm-256color
 
-# location of history
+# no bleeps
+setopt NOBEEP 
+# =Logging=
+export HISTSIZE=1000        # Number of lines kept in history
+export SAVEHIST=1000        # number of lines saved in the history after logout
 export HISTFILE=~/.zhistory
+setopt share_history        # Logging across shells
+setopt inc_append_history   # Logging across shells
 
-# Enable logging across shells
-setopt share_history
-setopt inc_append_history
-
-
-# ARCH LINUX SPECIFIX STUFF
-# Handeling pacman-color
-alias pacman='PACMAN=/usr/bin/pacman; [ -f /usr/bin/pacman-color ] && PACMAN=/usr/bin/pacman-color; $PACMAN $@'
-# aliases
-alias apl="pacman -Qi | awk '/^Name/ {pkg=\$3} /Size/ {print \$4\$5,pkg}' | sort -n" 
+# Resource files
+for file in $HOME/.zsh/rc/*.rc; do
+    source $file
+done

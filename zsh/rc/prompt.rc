@@ -1,0 +1,6 @@
+# = PROMPT =
+prompt walters
+export PROMPT="┌─[%{$fg[green]%}%n%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}][%T]
+└─>) "
+
+# vim: set ft=zsh:
