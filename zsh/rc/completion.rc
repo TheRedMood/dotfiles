@@ -6,9 +6,8 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Cache
-zstyle ':completion:*' use-cache on
+zstyle ':completion:*' use-cache 1
 zstyle ':completion:*' cache-path ~/.zsh/cache
-
 # Preventing CVS files from being completed
 zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/)CVS'
 zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
