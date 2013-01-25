@@ -5,6 +5,7 @@ xrdb ~/.dotfiles/colors/Xresources-tommytiger
 xrdb -merge ~/.Xresources
 
 #xcompmgr -c &
+#compton &
 nitrogen --restore &
 mpd &
 ~/.dropbox-dist/dropboxd & 
@@ -22,3 +23,4 @@ xsetroot -cursor_name left_ptr
 #exec dwm
 #exec herbstluftwm
 exec xmonad
+#exec snapwm/snapwm

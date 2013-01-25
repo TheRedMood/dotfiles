@@ -111,14 +111,6 @@ redKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     ]
     ++
 
-    --
-    -- mod-[1..9], Switch to workspace N
-    -- mod-shift-[1..9], Move client to workspace N
-    --
-    [((m .|. modm, k), windows $ f i)
-        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-    ++
 
     --
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
@@ -235,7 +227,6 @@ redmood = defaultConfig {
       -- simple stuff
         terminal           = redTerminal,
         focusFollowsMouse  = redFocusFollowsMouse,
-        clickJustFocuses   = redClickJustFocuses,
         borderWidth        = redBorderWidth,
         modMask            = redModMask,
         workspaces         = redWorkspaces,
