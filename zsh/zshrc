@@ -3,7 +3,7 @@ autoload -U compinit promptinit
 autoload -U colors && colors
 compinit
 promptinit
-
+fpath=(/usr/local/share/zsh-completions $fpath)
 # Resource files
 for file in $HOME/.zsh/rc/*.rc; do
     source $file
