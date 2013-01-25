@@ -1,4 +1,6 @@
+# Global aliases
 alias -g SPRUNGE='| curl -F "sprunge=<-" http://sprunge.us'
+
 # = ALIAS =
 alias grep="grep --color=auto"
 alias dbox="dropbox.py"
